@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>eTicket</title>
+
+<style>
+body{ padding:0px; 
+      margin:0px; 
+      background:white;
+      font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+      font-size:10px;
+}
+.continent{ 
+    width:450px;
+    overflow:auto;
+    border:1px solid #CCC;
+    background:white;
+    margin: 0px auto 240px auto;
+}
+.contain{ 
+    border:1px dashed #CCC;
+    overflow:auto;
+  border-radius:5px;
+  width:97%;
+  margin: 5px auto;
+		  
+}
+.head{ width:100%;
+       overflow:auto;
+	   background:#333;
+	   /*height:50px;*/
+	   font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	   color:#FFF;
+	   }
+.head h2{ margin:1px 0 1px 10px;}
+
+.content{ width:97%;
+          padding:5px;
+		  margin-top:5px;
+		  }
+.dat{ font-weight:bold;
+      font-size:12px;
+}
+th{ font-weight:bold;
+    font-size:12px;
+}
+table{ margin-top:20px;
+}
+.tablue{ margin-top:20px;
+}
+.bar_code{ 
+    margin-top:15px; 
+    border-top: 1px dashed #CCC;
+    border-bottom: 1px dashed #CCC;
+    background:#f3f3f3;
+    width:100%;
+    overflow:auto;
+    /*height:150px;*/
+}
+.tab{ margin:10px auto;
+      width:96%;
+     }
+.tab td{ margin-top:6px;
+}
+.terms{ width:#fff;
+        overflow:auto;
+		height:auto;
+		padding:5px;
+		text-align:justify;
+}
+.ttt{ 
+    font-size:7px !important;
+    line-height:8px;
+}
+.foot{ padding:3px; 
+       text-align:center;
+}
+#clr{height:10px; font-weight:bold;}
+</style>
+
+</head>
+
+<body>
+<div class="continent">
+   <div class="head"><h2>LOGO</h2></div>
+   <div class="contain">
+       <div class="content">
+       <div class="dat"> <p>Date: %DATE%</p></div>
+         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+             <tr>
+               <th width="60%" align="left">Organiser</th>
+               <th width="40%" align="left">Special Instructions</th>
+             </tr>
+             <tr>
+               <td width="60%">Name: %ORGANISERNAME%</td>
+               <td width="40%" rowspan="4" valign="top" align="justify" style="line-height: 13px;"> Thank you for purchasing tickets to this event. Please arrive 30 minutes early to ensure that you don't miss any of the show. On arrival present your ticket to one of our staff who will be stationed at the entrance. Thank you</td>
+             </tr>
+             <tr>
+               <td width="60%">Email: %ORGANISEREMAIL%</td>
+             </tr>
+           
+         </table>
+         
+         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablue">
+      <tr>
+        <th align="left">Purchaser</th>
+      </tr>
+      <tr>
+        <td>Name: %NAMEONTICKET%</td>
+      </tr>
+      <tr>
+        <td>Email: %EMAILONTICKET%</td>
+      </tr>
+    </table>
+    
+       </div>
+       <div class="bar_code">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tab">
+  
+    <th colspan="2" align="left">Event Information</th>
+  <tr>
+    <td id="clr"></td>
+    <td id="clr" align="right">Ticket No.: #%ODSID%</td>
+  </tr>
+  <tr>
+      <td rowspan="6" width="35%">
+          <img width="100" height="75" src="http://chart.apis.google.com/chart?cht=qr&chs=100x100&chl=%UNIQUE_ID%&choe=UTF-8" />
+      </td>
+    <td>Name: %EVENT_NAME%</td>
+  </tr>
+  <tr>
+    <td>Ticket Name: %TICKET_NAME%</td>
+  </tr>
+  <tr>
+    <td>Date / Time: %EVENT_DT%</td>
+  </tr>
+  <tr>
+    <td>Venue: %EVENT_V%</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+       </div>
+       <div class="terms">
+          <p>TERMS AND CONDITIONS OF USE, SALE AND PURCHASE</p>
+          <p class="ttt">Activation associates the use of the software with a specific computer. During activation, the software will send information about the software and the computer to Microsoft. This information includes the version, language and product key of the software, the Internet protocol address of the computer, and information derived from the hardware configuration of the computer. For more information, see go.microsoft.com/fwlink/?Linkid=104609. By using the software, you consent to the transmission of this information. If properly licensed, you have the right to use the version of the software installed during the installation process up to the time permitted for activation. Unless the software is activated, you have no right to use the software after the time permitted for activation. This is to prevent its unlicensed use. You are not permitted to bypass or circumvent activation. If the computer is connected to the Internet, the software may automatically connect to Microsoft for activation. You can also activate the software manually by Internet or telephone. If you do so, Internet and telephone service charges may apply. Some changes to your computer components or the software may require you to reactivate the software. The software will remind you to activate it until you do.</p>
+       </div>
+   </div>
+   <div class="foot"> This event was powered by %SITE_NAME% - %SITE_URL%</div>
+</div>
+</body>
+</html>
