@@ -72,6 +72,10 @@
           <!-- modal -->
 
         </form>
+        
+        <div class="container">
+          <p style="color:white;font-size: x-large;text-shadow: white 1px 0px 8px;text-align: center;margin-top: 45px;">Wouldn't you rather turn your trash into cash? </p>
+        </div>
 
       </div>
       <?php include_once "includes/footer.php" ?>
