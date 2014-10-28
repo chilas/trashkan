@@ -1,43 +1,43 @@
-<?php 
+<?php
 require_once 'libs/bootstrap.php';
-    
-    include_once "includes/protectsec.php";
-include_once "includes/header.php"; 
+
+include_once "includes/protectsec.php";
+include_once "includes/header.php";
 ?>
 <?php include_once "includes/user_top_bar.php" ?>
 <?php include_once "includes/user_nav_bar.php" ?>
 
 <?php
-if( isset($_POST['pick_submit'])){ 
-   if(!empty($_POST['category']) and !empty($_POST['p_type']) and !empty($_POST['p_qty']) and !empty($_POST['address'])                
-		  and !empty($_POST['city']) and !empty($_POST['state'])){  
+if( isset($_POST['pick_submit'])){
+	if(!empty($_POST['category']) and !empty($_POST['p_type']) and !empty($_POST['p_qty']) and !empty($_POST['address'])
+		and !empty($_POST['city']) and !empty($_POST['state'])){
 				//print_r($_POST);
-				$pu = new pickup();
-                list($status, $id) = $pu->addPickUp($_POST['address'], $_POST['city'],  $_POST['state'], $_POST['p_qty'], $_POST['p_type'], $_POST['comment'], $_POST['category']);
-				
-				 if($status){                    
-				   $output = "<div class=\"alert alert-block alert-danger fade in\">                           
-				   <button type=\"button\" class=\"close close-sm\" data-dismiss=\"alert\">                               
-				   <i class=\"fa fa-times\"></i>                            
-				   </button> Added Successfully                        
-				   </div>";               
-				   }else{                    
-				   $output = "<div class=\"alert alert-block alert-danger fade in\">                            
-				   <button type=\"button\" class=\"close close-sm\" data-dismiss=\"alert\">                                
-				   <i class=\"fa fa-times\"></i>                            
-				   </button>                             
-				   System error                        
-				   </div>";                
-				   }            
-		}else{           
- 		$output = "<div class=\"alert alert-block alert-danger fade in\">                           
-			<button type=\"button\" class=\"close close-sm\" data-dismiss=\"alert\">                                
-			<i class=\"fa fa-times\"></i>                           
-			</button>                            
-			All Fields Required!                        
-			</div>";         
-		}
-		}
+		$pu = new pickup();
+	list($status, $id) = $pu->addPickUp($_POST['address'], $_POST['city'],  $_POST['state'], $_POST['p_qty'], $_POST['p_type'], $_POST['comment'], $_POST['category']);
+
+	if($status){
+		$output = "<div class=\"alert alert-block alert-danger fade in\">
+		<button type=\"button\" class=\"close close-sm\" data-dismiss=\"alert\">
+			<i class=\"fa fa-times\"></i>
+		</button> Added Successfully
+	</div>";
+}else{
+	$output = "<div class=\"alert alert-block alert-danger fade in\">
+	<button type=\"button\" class=\"close close-sm\" data-dismiss=\"alert\">
+		<i class=\"fa fa-times\"></i>
+	</button>
+	System error
+</div>";
+}
+}else{
+	$output = "<div class=\"alert alert-block alert-danger fade in\">
+	<button type=\"button\" class=\"close close-sm\" data-dismiss=\"alert\">
+		<i class=\"fa fa-times\"></i>
+	</button>
+	All Fields Required!
+</div>";
+}
+}
 ?>
 <!-- main content start-->
 <section id="main-content">
@@ -51,9 +51,9 @@ if( isset($_POST['pick_submit'])){
 						<i class="icon-truck icon-3x"></i> Request form
 					</header>
 					<div class="panel-body">
-						
+
 						<form role="form" method="post">
-						<?php if(!empty($output)) echo $output; ?>
+							<?php if(!empty($output)) echo $output; ?>
 							<div class="form-group inline">
 								<label for="category">Select Category</label>
 								<div class="radio">
@@ -69,7 +69,7 @@ if( isset($_POST['pick_submit'])){
 									</label>
 								</div>
 							</div>
-							
+
 							<div class="form-group">
 								<label for="exact">What exactly?</label>
 								<input type="text" class="form-control" id="exactly" placeholder="Ex. Paper, Bottles..." name="p_type">
@@ -115,7 +115,7 @@ if( isset($_POST['pick_submit'])){
 						Any user thats found in any form of deceit just to make money off this platform would be sanctioned!
 					</div>
 				</section>
-			</div>	
+			</div>
 		</section>
 	</section>
 
