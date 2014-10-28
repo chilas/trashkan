@@ -99,6 +99,9 @@ margin-bottom: 20px;" name="user_submit" type="submit" value="OKAY" />
     			</div>
     		</div>
     	</form>
+    	<div class="container">
+          <p style="color:white;font-size: x-large;text-shadow: white 1px 0px 8px;text-align: center;margin-top: 45px;">Wouldn't you rather turn your trash into cash? </p>
+        </div>
 
     	<?php } else if (isset($_GET['type']) and $_GET['type'] == 'company') { ?>
 
